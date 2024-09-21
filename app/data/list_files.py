@@ -1,0 +1,1 @@
+ANIMALS = "app/files/animals.json"
