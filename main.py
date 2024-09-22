@@ -7,11 +7,11 @@ from aiogram import Bot, Dispatcher, Router
 from dotenv import load_dotenv
 
 from app.routers.start import start_router
-
+from app.routers.animals import animals_router
 
 load_dotenv()
 root_router = Router()
-root_router.include_routers(start_router)
+root_router.include_routers(start_router, animals_router)
 
 
 def main():
