@@ -36,3 +36,16 @@ def animal_cured(animal, path: str = list_files.ANIMALS_CURED) -> str:
     save_file(animal_cured, path)
 
     return f"Тваринку '{animal}' вилікувано."
+
+
+def add_animal(animal, path: str = list_files.ANIMALS) -> str:
+    animals = open_file()
+
+    if animal not in animals:
+        animals.append(animal)
+        save_file(animals)
+        msg = f"Тваринку '{animal}' успішно додано на лікування."
+    else:
+        msg = f"Тваринка '{animal}' вже лікується."
+
+    return msg

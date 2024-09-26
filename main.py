@@ -8,10 +8,11 @@ from dotenv import load_dotenv
 
 from app.routers.start import start_router
 from app.routers.animals import animals_router
+from app.routers.reviews import review_router
 
 load_dotenv()
 root_router = Router()
-root_router.include_routers(start_router, animals_router)
+root_router.include_routers(start_router, animals_router, review_router)
 
 
 def main():
