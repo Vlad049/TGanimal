@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove
 from aiogram.fsm.context import FSMContext
 
-from app.data  import files_actions
+from app.data import files_actions
 from app.keyboards.animals import aniamls_keyboard_builder, animal_actions_keyboard
 
 
@@ -39,5 +39,5 @@ async def animal_cured(callback: CallbackQuery, state: FSMContext):
 @animals_router.callback_query(F.data.startswith("del_animal_"))
 async def del_animal(callback: CallbackQuery, state: FSMContext):
     animal = callback.data.split("_")[-1]
-    msg = files_actions.del_product(animal)
+    msg = files_actions.del_animal(animal)
     await callback.message.answer(text=msg)
