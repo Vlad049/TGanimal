@@ -29,14 +29,14 @@ async def animal_action(callback: CallbackQuery, state: FSMContext):
 
 
 
-@animals_router.callback_query(F.data.startswith("animal_cured_"))
+@animals_router.callback_query(F.data.startswith("cured_animal_"))
 async def animal_cured(callback: CallbackQuery, state: FSMContext):
     animal = callback.data.split("_")[-1]
     msg = files_actions.animal_cured(animal)
     await callback.message.answer(text=msg)
 
 
-@animals_router.callback_query(F.data.startswith("animal_delete_"))
+@animals_router.callback_query(F.data.startswith("delete_animal_"))
 async def del_animal(callback: CallbackQuery, state: FSMContext):
     animal = callback.data.split("_")[-1]
     msg = files_actions.del_animal(animal)

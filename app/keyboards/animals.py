@@ -12,6 +12,6 @@ def aniamls_keyboard_builder(animals: list):
 
 def animal_actions_keyboard(animal: str):
     builder = InlineKeyboardBuilder()
-    builder.button(text="Вилікувати тваринку", callback_data=f"animal_cured_{animal}")
-    builder.button(text="Видалити тваринку", callback_data=f"animal_delete_{animal}")
+    builder.button(text="Вилікувати тваринку", callback_data=f"cured_animal_{animal}")
+    builder.button(text="Видалити тваринку", callback_data=f"delete_animal_{animal}")
     return builder.as_markup()
